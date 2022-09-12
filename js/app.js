@@ -11,6 +11,8 @@ const actionsArray = [
 
 let level = 1
 let progress = 0
+let timeLeft = 0
+let timer 
 
 /*---------------Cached Element References---------------*/
 
@@ -20,6 +22,7 @@ const firstEvolution = document.getElementById('evolution1')
 const secondEvolution = document.getElementById('evolution2')
 const finalEvolution = document.getElementById('evolution3')
 const startBtn = document.getElementById('start')
+const restartBtn = document.getElementById('restart')
 const levelCount = document.querySelector('h4')
 const progBar = document.querySelectorAll('.progress-bar')
 const foodBtn = document.getElementById('food')
@@ -28,11 +31,12 @@ const sleepBtn = document.getElementById('sleep')
 const friendBtn = document.getElementById('friend')
 let countdownEl = document.getElementById('countdown')
 let randomNumber = Math.floor(Math.random()*actionsArray.length)
-console.log(actionsArray[randomNumber]);
+
 
 /*--------------------Event Listeners--------------------*/
 
 startBtn.addEventListener('click', start)
+restartBtn.addEventListener('click', restart)
 foodBtn.addEventListener('click', foodClick)
 coffeeBtn.addEventListener('click', coffeeClick)
 sleepBtn.addEventListener('click', sleepClick)
@@ -46,17 +50,19 @@ function init () {
     secondEvolution.style.display = "none"
     finalEvolution.style.display = "none"
     progBar.item(0).setAttribute('style', 'width: 0%')
+    restartBtn.style.display = "none"
 }
 
 function start () {
-    // let timeLeft = 60
-    // let timer = setInterval(() => {
-    //     timeLeft -= 1
-    //     countdownEl.textContent = timeLeft
-    // if (timeLeft === 0) {
-    //     clearInterval(timer)
-    // }
-    // }, 1000)
+    let timeLeft = 60
+    timer = setInterval(() => {
+        timeLeft -= 1
+        countdownEl.textContent = timeLeft
+    if (timeLeft === 0) {
+        clearInterval(timer)
+        countdownEl.textContent = '0'
+    }
+    }, 1000)
     level = 1
     progress = 0
     startBtn.style.display = "block"
@@ -65,7 +71,16 @@ function start () {
     finalEvolution.style.display = "none"
     messageEl.textContent = "Start?"
     progBar.item(0).setAttribute('style', 'width: 0%')
+    startBtn.style.display = "none"
+    restartBtn.style.display = "block"
     render()
+}
+
+function restart () {
+    clearInterval(timer)
+    countdownEl.textContent = ''
+    startBtn.style.display = "block"
+    restartBtn.style.display = "none"
 }
 
 function foodClick () {
@@ -97,7 +112,7 @@ function friendClick () {
 }
 
 function render () {
-    messageEl.textContent = actionsArray[randomNumber]
+    messageEl.textContent = actionsArray[Math.floor(Math.random()*actionsArray.length)]
     if (progress === 100) {
         level += 1
         progress = 0
