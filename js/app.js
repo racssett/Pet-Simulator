@@ -1,7 +1,11 @@
 /*-----------------------Constants-----------------------*/
 
-
-
+const actionArray = [
+    "He's hungry!",
+    "He needs caffeine",
+    "He needs a nap",
+    "He needs a friend"
+]
 
 /*-------------------Variables (state)-------------------*/
 
@@ -43,6 +47,7 @@ function init () {
     finalEvolution.style = "display: none"
     startBtn.style = "display: block"
     restartBtn.style = "display: none"
+    messageEl.textContent = "Start?"
     render()
 }
 
