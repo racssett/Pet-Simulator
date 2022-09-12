@@ -9,7 +9,8 @@ const actionsArray = [
 
 /*-------------------Variables (state)-------------------*/
 
-let level, progress
+let level = 1
+let progress = 0
 
 /*---------------Cached Element References---------------*/
 
@@ -21,6 +22,8 @@ const finalEvolution = document.getElementById('evolution3')
 const startBtn = document.getElementById('start')
 const levelCount = document.querySelector('h4')
 const progBar = document.querySelectorAll('.progress-bar')
+const foodBtn = document.getElementById('food')
+const coffeeBtn = document.getElementById('coffee')
 let countdownEl = document.getElementById('countdown')
 let randomNumber = Math.floor(Math.random()*actionsArray.length)
 console.log(actionsArray[randomNumber]);
@@ -28,7 +31,8 @@ console.log(actionsArray[randomNumber]);
 /*--------------------Event Listeners--------------------*/
 
 startBtn.addEventListener('click', start)
-
+foodBtn.addEventListener('click', foodClick)
+coffeeBtn.addEventListener('click', coffeeClick)
 
 /*-----------------------Functions-----------------------*/
 
@@ -53,13 +57,33 @@ function start () {
     progress = 0
     startBtn.style.display = "block"
     firstEvolution.style.display = "block"
+    secondEvolution.style.display = "none"
+    finalEvolution.style.display = "none"
     messageEl.textContent = "Start?"
     progBar.item(0).setAttribute('style', 'width: 0%')
     render()
 }
 
+function foodClick () {
+    if (messageEl.textContent === actionsArray[0]) {
+        progress += 10
+    }
+    render()
+}
+
+function coffeeClick () {
+    if (messageEl.textContent === actionsArray[1]) {
+        progress += 10
+    }
+    render()
+}
 
 function render () {
+    messageEl.textContent = actionsArray[randomNumber]
+    if (progress === 100) {
+        level += 1
+        progress = 0
+    }
     progBar.item(0).setAttribute('style', `width: ${progress}%`)
     if (level === 3) {
         finalEvolution.style.display = "block"
@@ -79,3 +103,4 @@ function render () {
         levelCount.textContent = "Level: 1"
     }
 }
+
