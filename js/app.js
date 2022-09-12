@@ -24,6 +24,8 @@ const levelCount = document.querySelector('h4')
 const progBar = document.querySelectorAll('.progress-bar')
 const foodBtn = document.getElementById('food')
 const coffeeBtn = document.getElementById('coffee')
+const sleepBtn = document.getElementById('sleep')
+const friendBtn = document.getElementById('friend')
 let countdownEl = document.getElementById('countdown')
 let randomNumber = Math.floor(Math.random()*actionsArray.length)
 console.log(actionsArray[randomNumber]);
@@ -33,6 +35,8 @@ console.log(actionsArray[randomNumber]);
 startBtn.addEventListener('click', start)
 foodBtn.addEventListener('click', foodClick)
 coffeeBtn.addEventListener('click', coffeeClick)
+sleepBtn.addEventListener('click', sleepClick)
+friendBtn.addEventListener('click', friendClick)
 
 /*-----------------------Functions-----------------------*/
 
@@ -73,6 +77,20 @@ function foodClick () {
 
 function coffeeClick () {
     if (messageEl.textContent === actionsArray[1]) {
+        progress += 10
+    }
+    render()
+}
+
+function sleepClick () {
+    if (messageEl.textContent === actionsArray[2]) {
+        progress += 10
+    }
+    render()
+}
+
+function friendClick () {
+    if (messageEl.textContent === actionsArray[3]) {
         progress += 10
     }
     render()
