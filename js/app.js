@@ -42,22 +42,22 @@ init()
 function init () {
     timer = 0
     level = 1
-    firstEvolution.style = "display: block"
-    secondEvolution.style = "display: none"
-    finalEvolution.style = "display: none"
-    startBtn.style = "display: block"
-    restartBtn.style = "display: none"
+    firstEvolution.style.display = "block"
+    secondEvolution.style.display = "none"
+    finalEvolution.style.display = "none"
+    startBtn.style.display = "block"
+    restartBtn.style.display = "none"
     messageEl.textContent = "Start?"
     render()
 }
 
 function render () {
     if (level === 3) {
-        finalEvolution.style = "display: block"
-        secondEvolution.style = "display: none"
+        finalEvolution.style.display = "block"
+        secondEvolution.style.display = "none"
         messageEl.textContent = "You did it!"
     } else if (level === 2) {
-        secondEvolution.style = "dispaly: block"
+        secondEvolution.style.display = "block"
         levelCount.textContent = "Level: 2"
     }
 }
