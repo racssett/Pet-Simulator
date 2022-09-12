@@ -28,7 +28,9 @@ const startBtn = document.getElementById('start')
 const restartBtn = document.getElementById('restart')
 
 const levelCount = document.querySelector('h4')
-console.log(levelCount);
+
+const progBar = document.querySelector('.progress-bar')
+console.log(progBar);
 
 /*--------------------Event Listeners--------------------*/
 
@@ -42,22 +44,29 @@ init()
 function init () {
     timer = 0
     level = 1
-    firstEvolution.style.display = "block"
-    secondEvolution.style.display = "none"
-    finalEvolution.style.display = "none"
     startBtn.style.display = "block"
     restartBtn.style.display = "none"
     messageEl.textContent = "Start?"
     render()
 }
 
+
 function render () {
     if (level === 3) {
         finalEvolution.style.display = "block"
         secondEvolution.style.display = "none"
+        firstEvolution.style.display = "none"
         messageEl.textContent = "You did it!"
+        levelCount.textContent = "Level: 3"
     } else if (level === 2) {
+        finalEvolution.style.display = "none"
         secondEvolution.style.display = "block"
+        firstEvolution.style.display = "none"
         levelCount.textContent = "Level: 2"
+    } else if (level === 1) {
+        finalEvolution.style.display = "none"
+        secondEvolution.style.display = "none"
+        firstEvolution.style.display = "block"
+        levelCount.textContent = "Level: 1"
     }
 }
