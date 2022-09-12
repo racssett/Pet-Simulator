@@ -1,10 +1,10 @@
 /*-----------------------Constants-----------------------*/
 
-const actionArray = [
+const actionsArray = [
     "He's hungry!",
-    "He needs caffeine",
-    "He needs a nap",
-    "He needs a friend"
+    "He needs caffeine!",
+    "He needs a nap!",
+    "He needs a friend!"
 ]
 
 /*-------------------Variables (state)-------------------*/
@@ -22,6 +22,8 @@ const startBtn = document.getElementById('start')
 const levelCount = document.querySelector('h4')
 const progBar = document.querySelectorAll('.progress-bar')
 let countdownEl = document.getElementById('countdown')
+let randomNumber = Math.floor(Math.random()*actionsArray.length)
+console.log(actionsArray[randomNumber]);
 
 /*--------------------Event Listeners--------------------*/
 
