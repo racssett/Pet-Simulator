@@ -10,25 +10,21 @@ let level, timer
 /*---------------Cached Element References---------------*/
 
 const messageEl = document.getElementById('message')
-console.log(messageEl)
 
 const icons = document.querySelectorAll('.icons > div')
-console.log(icons)
 
 const firstEvolution = document.getElementById('evolution1')
-console.log(firstEvolution)
 
 const secondEvolution = document.getElementById('evolution2')
-console.log(secondEvolution)
 
 const finalEvolution = document.getElementById('evolution3')
-console.log(finalEvolution)
 
 const startBtn = document.getElementById('start')
-console.log(startBtn)
 
 const restartBtn = document.getElementById('restart')
-console.log(restartBtn);
+
+const levelCount = document.querySelector('h4')
+console.log(levelCount);
 
 /*--------------------Event Listeners--------------------*/
 
@@ -37,12 +33,26 @@ console.log(restartBtn);
 
 /*-----------------------Functions-----------------------*/
 
+init()
+
 function init () {
     timer = 0
     level = 1
     firstEvolution.style = "display: block"
-    secondEvolution.style = "display: hidden"
-    finalEvolution.style = "display: hidden"
+    secondEvolution.style = "display: none"
+    finalEvolution.style = "display: none"
     startBtn.style = "display: block"
-    restartBtn.style = "display: hidden"
+    restartBtn.style = "display: none"
+    render()
+}
+
+function render () {
+    if (level === 3) {
+        finalEvolution.style = "display: block"
+        secondEvolution.style = "display: none"
+        messageEl.textContent = "You did it!"
+    } else if (level === 2) {
+        secondEvolution.style = "dispaly: block"
+        levelCount.textContent = "Level: 2"
+    }
 }
