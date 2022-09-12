@@ -9,44 +9,48 @@ const actionArray = [
 
 /*-------------------Variables (state)-------------------*/
 
-let level, timer, progress
+let level, progress
 
 /*---------------Cached Element References---------------*/
 
 const messageEl = document.getElementById('message')
-
 const icons = document.querySelectorAll('.icons > div')
-
 const firstEvolution = document.getElementById('evolution1')
-
 const secondEvolution = document.getElementById('evolution2')
-
 const finalEvolution = document.getElementById('evolution3')
-
 const startBtn = document.getElementById('start')
-
-const restartBtn = document.getElementById('restart')
-
 const levelCount = document.querySelector('h4')
-
 const progBar = document.querySelectorAll('.progress-bar')
-console.log(progBar);
+let countdownEl = document.getElementById('countdown')
 
 /*--------------------Event Listeners--------------------*/
 
-
+startBtn.addEventListener('click', start)
 
 
 /*-----------------------Functions-----------------------*/
 
-init()
+init ()
 
 function init () {
-    timer = 0
+    secondEvolution.style.display = "none"
+    finalEvolution.style.display = "none"
+    progBar.item(0).setAttribute('style', 'width: 0%')
+}
+
+function start () {
+    // let timeLeft = 60
+    // let timer = setInterval(() => {
+    //     timeLeft -= 1
+    //     countdownEl.textContent = timeLeft
+    // if (timeLeft === 0) {
+    //     clearInterval(timer)
+    // }
+    // }, 1000)
     level = 1
     progress = 0
     startBtn.style.display = "block"
-    restartBtn.style.display = "none"
+    firstEvolution.style.display = "block"
     messageEl.textContent = "Start?"
     progBar.item(0).setAttribute('style', 'width: 0%')
     render()
@@ -72,5 +76,4 @@ function render () {
         firstEvolution.style.display = "block"
         levelCount.textContent = "Level: 1"
     }
-
 }
