@@ -9,7 +9,7 @@ const actionArray = [
 
 /*-------------------Variables (state)-------------------*/
 
-let level, timer
+let level, timer, progress
 
 /*---------------Cached Element References---------------*/
 
@@ -29,7 +29,7 @@ const restartBtn = document.getElementById('restart')
 
 const levelCount = document.querySelector('h4')
 
-const progBar = document.querySelector('.progress-bar')
+const progBar = document.querySelectorAll('.progress-bar')
 console.log(progBar);
 
 /*--------------------Event Listeners--------------------*/
@@ -44,14 +44,17 @@ init()
 function init () {
     timer = 0
     level = 1
+    progress = 0
     startBtn.style.display = "block"
     restartBtn.style.display = "none"
     messageEl.textContent = "Start?"
+    progBar.item(0).setAttribute('style', 'width: 0%')
     render()
 }
 
 
 function render () {
+    progBar.item(0).setAttribute('style', `width: ${progress}%`)
     if (level === 3) {
         finalEvolution.style.display = "block"
         secondEvolution.style.display = "none"
@@ -69,4 +72,5 @@ function render () {
         firstEvolution.style.display = "block"
         levelCount.textContent = "Level: 1"
     }
+
 }
