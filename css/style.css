@@ -7,12 +7,20 @@ body {
     padding: 0;
 }
 
+.state-container {
+    display: flex;
+    flex-direction: row;
+}
+
 h4 {
     margin-top: 10px;
+    margin-right: 30px;
 }
 
 #countdown {
-    text-align: right;
+    margin-top: 8px;
+    font-size: 21px;
+    margin-left: 30px;
 }
 
 #evolution1 {
@@ -36,8 +44,16 @@ h4 {
     flex-direction: row;
 }
 
+#food,
+#coffee,
+#sleep,
+#friend {
+    margin: 10px 25px;
+}
+
 .progress {
     width: 50%;
+    margin: 10px;
 }
 
 
