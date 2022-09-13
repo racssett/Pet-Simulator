@@ -36,7 +36,7 @@ let randomNumber = Math.floor(Math.random()*actionsArray.length)
 /*--------------------Event Listeners--------------------*/
 
 startBtn.addEventListener('click', start)
-restartBtn.addEventListener('click', restart)
+restartBtn.addEventListener('click', init)
 foodBtn.addEventListener('click', foodClick)
 coffeeBtn.addEventListener('click', coffeeClick)
 sleepBtn.addEventListener('click', sleepClick)
@@ -46,11 +46,18 @@ friendBtn.addEventListener('click', friendClick)
 
 init ()
 
-function init () {
+function init () {    
+    clearInterval(timer)
+    countdownEl.textContent = ''
+    startBtn.style.display = "block"
+    restartBtn.style.display = "none"
+    hasLost = false
+    messageEl.textContent = "Start?"
+    firstEvolution.style.display = "block"
     secondEvolution.style.display = "none"
     finalEvolution.style.display = "none"
+    levelCount.textContent = "Level: 1"
     progBar.item(0).setAttribute('style', 'width: 0%')
-    restartBtn.style.display = "none"
 }
 
 setInterval(winOrLose, 1000)
@@ -88,21 +95,6 @@ function start () {
     startBtn.style.display = "none"
     restartBtn.style.display = "block"
     render()
-}
-
-function restart () {
-    clearInterval(timer)
-    countdownEl.textContent = ''
-    startBtn.style.display = "block"
-    restartBtn.style.display = "none"
-    hasLost = false
-    messageEl.textContent = ''
-    messageEl.textContent = "Start?"
-    firstEvolution.style.display = "block"
-    secondEvolution.style.display = "none"
-    finalEvolution.style.display = "none"
-    levelCount.textContent = "Level: 1"
-    progBar.item(0).setAttribute('style', 'width: 0%')
 }
 
 function foodClick () {
