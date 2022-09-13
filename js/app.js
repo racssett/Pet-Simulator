@@ -84,7 +84,6 @@ function start () {
     firstEvolution.style.display = "block"
     secondEvolution.style.display = "none"
     finalEvolution.style.display = "none"
-    messageEl.textContent = "Start?"
     progBar.item(0).setAttribute('style', 'width: 0%')
     startBtn.style.display = "none"
     restartBtn.style.display = "block"
@@ -98,6 +97,12 @@ function restart () {
     restartBtn.style.display = "none"
     hasLost = false
     messageEl.textContent = ''
+    messageEl.textContent = "Start?"
+    firstEvolution.style.display = "block"
+    secondEvolution.style.display = "none"
+    finalEvolution.style.display = "none"
+    levelCount.textContent = "Level: 1"
+    progBar.item(0).setAttribute('style', 'width: 0%')
 }
 
 function foodClick () {
