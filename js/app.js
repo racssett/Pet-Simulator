@@ -97,6 +97,7 @@ function restart () {
     startBtn.style.display = "block"
     restartBtn.style.display = "none"
     hasLost = false
+    messageEl.textContent = ''
 }
 
 function foodClick () {
