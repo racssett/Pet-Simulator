@@ -66,7 +66,7 @@ function winOrLose () {
 }
 
 function start () {
-    let timeLeft = 10
+    let timeLeft = 30
     timer = setInterval(() => {
         timeLeft -= 1
         countdownEl.textContent = timeLeft
