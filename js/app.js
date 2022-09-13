@@ -11,8 +11,8 @@ const actionsArray = [
 
 let level = 1
 let progress = 0
-let timeLeft = 0
-let timer 
+let timeLeft, timer 
+let hasLost = false
 
 /*---------------Cached Element References---------------*/
 
@@ -53,15 +53,30 @@ function init () {
     restartBtn.style.display = "none"
 }
 
+setInterval(winOrLose, 1000)
+
+function winOrLose () {
+    console.log('Hit')
+    console.log(countdownEl.textContent)
+    console.log(level);
+    if (countdownEl.textContent === '0' && level !== 3) {
+        messageEl.textContent = "You lose"
+        hasLost = true
+    }
+}
+
 function start () {
-    let timeLeft = 60
+    let timeLeft = 10
     timer = setInterval(() => {
         timeLeft -= 1
         countdownEl.textContent = timeLeft
     if (timeLeft === 0) {
         clearInterval(timer)
         countdownEl.textContent = '0'
-    }
+    } else if (level === 3) {
+        clearInterval (timer)
+        countdownEl.textContent = '🎉'
+    } 
     }, 1000)
     level = 1
     progress = 0
@@ -81,31 +96,40 @@ function restart () {
     countdownEl.textContent = ''
     startBtn.style.display = "block"
     restartBtn.style.display = "none"
+    hasLost = false
 }
 
 function foodClick () {
-    if (messageEl.textContent === actionsArray[0]) {
+    if (hasLost === true) {
+        return
+    } else if (messageEl.textContent === actionsArray[0]) {
         progress += 10
     }
     render()
 }
 
 function coffeeClick () {
-    if (messageEl.textContent === actionsArray[1]) {
+    if (hasLost === true) {
+        return
+    } else if (messageEl.textContent === actionsArray[1]) {
         progress += 10
     }
     render()
 }
 
 function sleepClick () {
-    if (messageEl.textContent === actionsArray[2]) {
+    if (hasLost === true) {
+        return
+    } else if (messageEl.textContent === actionsArray[2]) {
         progress += 10
     }
     render()
 }
 
 function friendClick () {
-    if (messageEl.textContent === actionsArray[3]) {
+    if (hasLost === true) {
+        return
+    } else if (messageEl.textContent === actionsArray[3]) {
         progress += 10
     }
     render()
@@ -124,6 +148,7 @@ function render () {
         firstEvolution.style.display = "none"
         messageEl.textContent = "You did it!"
         levelCount.textContent = "Level: 3"
+        countdownEl.textContent = "🎉"
     } else if (level === 2) {
         finalEvolution.style.display = "none"
         secondEvolution.style.display = "block"
@@ -134,6 +159,6 @@ function render () {
         secondEvolution.style.display = "none"
         firstEvolution.style.display = "block"
         levelCount.textContent = "Level: 1"
-    }
+    } 
 }
 
