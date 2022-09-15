@@ -47,7 +47,7 @@ h4 {
 
 #evolution3 {
     height: 350px;
-    width: 250px;
+    width: 300px;
 }
 
 .input-container {
@@ -90,7 +90,7 @@ h4 {
         display: grid;
         grid-template-columns: 40% 60%;
         grid-template-rows: 15% 85%;
-        width: 600px;
+        width: 700px;
     }
 
     h4 {
