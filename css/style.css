@@ -38,12 +38,9 @@ h4 {
     justify-content: center;
 }
 
-#evolution1 {
-    height: 350px;
-    width: 250px;
-}
-
-#evolution2 {
+#evolution1, 
+#evolution2,
+#evolution-2-crying {
     height: 350px;
     width: 250px;
 }
