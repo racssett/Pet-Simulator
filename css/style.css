@@ -5,6 +5,8 @@ body {
     align-items: center;
     margin: 0;
     padding: 0;
+    background: rgb(246,248,255);
+    background: radial-gradient(circle, rgba(246,248,255,1) 0%, rgba(246,192,234,1) 100%);
 }
 
 .state-container {
@@ -82,8 +84,8 @@ h4 {
 .progress {
     width: 50%;
     margin: 10px;
+    border: 2px solid black;
 }
-
 
 @media only screen and (min-width: 768px) {
     .upper-container {

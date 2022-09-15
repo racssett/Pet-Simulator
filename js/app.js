@@ -58,6 +58,10 @@ function init () {
     finalEvolution.style.display = "none"
     levelCount.textContent = "Level: 1"
     progBar.item(0).setAttribute('style', 'width: 0%')
+    foodBtn.textContent = "🍯"
+    coffeeBtn.textContent = "☕️"
+    friendBtn.textContent = "🧸"
+    sleepBtn.textContent = "😴"
 }
 
 setInterval(winOrLose, 1000)
@@ -94,6 +98,10 @@ function start () {
     progBar.item(0).setAttribute('style', 'width: 0%')
     startBtn.style.display = "none"
     restartBtn.style.display = "block"
+    foodBtn.textContent = "🍯"
+    coffeeBtn.textContent = "☕️"
+    friendBtn.textContent = "🧸"
+    sleepBtn.textContent = "😴"
     render()
 }
 
@@ -147,6 +155,10 @@ function render () {
         messageEl.textContent = "You did it!"
         levelCount.textContent = "Level: 3"
         countdownEl.textContent = "🎉"
+        foodBtn.textContent = "🐻"
+        coffeeBtn.textContent = "🐻"
+        friendBtn.textContent = "🐻"
+        sleepBtn.textContent = "🐻"
     } else if (level === 2) {
         finalEvolution.style.display = "none"
         secondEvolution.style.display = "block"
