@@ -11,7 +11,8 @@ const actionsArray = [
 
 let level = 1
 let progress = 0
-let timeLeft, timer 
+let timeLeft = 31
+let timer 
 let hasLost = false
 
 /*---------------Cached Element References---------------*/
@@ -130,6 +131,8 @@ function foodClick () {
         return
     } else if (messageEl.textContent === actionsArray[0]) {
         progress += 10
+    } else if (timeLeft > 30) {
+        return
     }
     render()
 }
@@ -139,6 +142,8 @@ function coffeeClick () {
         return
     } else if (messageEl.textContent === actionsArray[1]) {
         progress += 10
+    } else if (timeLeft > 30) {
+        return
     }
     render()
 }
@@ -148,6 +153,8 @@ function sleepClick () {
         return
     } else if (messageEl.textContent === actionsArray[2]) {
         progress += 10
+    } else if (timeLeft > 30) {
+        return
     }
     render()
 }
@@ -157,6 +164,8 @@ function friendClick () {
         return
     } else if (messageEl.textContent === actionsArray[3]) {
         progress += 10
+    } else if (timeLeft > 30) {
+        return
     }
     render()
 }
