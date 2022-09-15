@@ -5,11 +5,6 @@
 In this game you have to match the message with the corresponding action to level up the character and reach different evolutions. Play
 <a href="https://pet-evolution-simulator.netlify.app/">here</a>.
 
-## Table of Contents
-* [Technologies Used] (#technologies-used)
-* [Future plans] (#future-plans)
-* [Credits] (#credits)
-
 ## Technologies Used
 
 - JavaScript
