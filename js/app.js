@@ -173,7 +173,7 @@ function render () {
         coffeeBtn.textContent = "🐻"
         friendBtn.textContent = "🐻"
         sleepBtn.textContent = "🐻"
-        confetti.start(10000)
+        confetti.start(4000)
     } else if (level === 2) {
         finalEvolution.style.display = "none"
         secondEvolution.style.display = "block"

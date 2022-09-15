@@ -1,5 +1,5 @@
 var confetti = {
-	maxCount: 500,		//set max confetti count
+	maxCount: 300,		//set max confetti count
 	speed: 5,			//set the particle animation speed
 	frameInterval: 15,	//the confetti animation frame interval in milliseconds
 	alpha: 1.0,			//the alpha opacity of the confetti (between 0 and 1, where 1 is opaque and 0 is invisible)
@@ -27,7 +27,18 @@ var confetti = {
 	confetti.isRunning = isConfettiRunning;
 	var supportsAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame;
 	var colors = ["rgba(30,144,255,", "rgba(107,142,35,", "rgba(255,215,0,", "rgba(255,192,203,", "rgba(106,90,205,", "rgba(173,216,230,", "rgba(238,130,238,", "rgba(152,251,152,", "rgba(70,130,180,", "rgba(244,164,96,", "rgba(210,105,30,", "rgba(220,20,60,"];
-	var streamingConfetti = false;
+	// var imgArray = new Array();
+    // imgArray[0] = new Image();
+    // imgArray[0].src = './images/meme1.jpg';
+    // imgArray[1] = new Image();
+    // imgArray[1].src = './images/meme2.jpg';
+    // imgArray[2] = new Image();
+    // imgArray[2].src = './images/meme3.jpg';
+    // imgArray[3] = new Image();
+    // imgArray[3].src = './images/meme4.jpg';
+    // imgArray[4] = new Image();
+    // imgArray[4].src = './images/meme5.jpg';
+    var streamingConfetti = false;
 	var animationTimer = null;
 	var pause = false;
 	var lastFrameTime = Date.now();
