@@ -31,6 +31,7 @@ const sleepBtn = document.getElementById('sleep')
 const friendBtn = document.getElementById('friend')
 const level2Loss = document.getElementById('evolution-2-crying')
 const level1Loss = document.getElementById('evolution-1-crying')
+const bgMusic = new Audio ("/Assets/bg-music.wav")
 let countdownEl = document.getElementById('countdown')
 let randomNumber = Math.floor(Math.random()*actionsArray.length)
 
@@ -47,6 +48,7 @@ friendBtn.addEventListener('click', friendClick)
 /*-----------------------Functions-----------------------*/
 
 init ()
+
 
 function init () {    
     clearInterval(timer)
@@ -78,6 +80,7 @@ function winOrLose () {
         messageEl.textContent = "Time's Up!"
         levelCount.textContent = ""
         hasLost = true
+        bgMusic.pause ()
         if (level === 2) {
             level2Loss.style.display = "block"
             secondEvolution.style.display = "none"
@@ -116,6 +119,8 @@ function start () {
     coffeeBtn.textContent = "☕️"
     friendBtn.textContent = "🧸"
     sleepBtn.textContent = "😴"
+    bgMusic.volume = 0.15
+    bgMusic.play()
     render()
 }
 
@@ -173,6 +178,7 @@ function render () {
         coffeeBtn.textContent = "🐻"
         friendBtn.textContent = "🐻"
         sleepBtn.textContent = "🐻"
+        bgMusic.pause ()
         confetti.start(4000)
     } else if (level === 2) {
         finalEvolution.style.display = "none"
