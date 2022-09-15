@@ -29,6 +29,12 @@ h4 {
     text-align: right;
 }
 
+.evolution-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #evolution1 {
     height: 350px;
     width: 250px;
@@ -48,8 +54,8 @@ h4 {
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: auto;
-    height: 120px;
-    margin: 15px 0;
+    height: 110px;
+    margin: 10px 0;
 }
 
 #message {
@@ -79,11 +85,47 @@ h4 {
 }
 
 
-
-
-/* @media only screen and (min-width: 768px) {
-    body {
+@media only screen and (min-width: 768px) {
+    .upper-container {
         display: grid;
         grid-template-columns: 40% 60%;
+        grid-template-rows: 15% 85%;
+        width: 600px;
     }
-} */
+
+    h4 {
+        grid-row-start: 1;
+    }
+
+    .evolution-container {
+        display: grid;
+        grid-row-start: 2;
+        place-items: center;
+    }
+    
+    .input-container {
+        display: flex;
+        flex-direction: column;
+        grid-row-start: 2;
+        grid-row-end: 2;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+    }
+
+    #message {
+        font-size: 32px;
+    }
+
+    .icons {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        margin: 10px;
+        font-size: 50px;
+    }
+
+    .progress {
+        margin: 40px 0 20px 0;
+    }
+}
