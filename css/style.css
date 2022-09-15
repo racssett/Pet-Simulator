@@ -77,6 +77,13 @@ h4 {
 #food,
 #coffee,
 #sleep,
+#friend:hover {
+    cursor: pointer;
+}
+
+#food,
+#coffee,
+#sleep,
 #friend {
     margin: 10px 25px;
     animation: 1.9s slidein;
