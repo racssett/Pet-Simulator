@@ -68,6 +68,7 @@ function init () {
     coffeeBtn.textContent = "☕️"
     friendBtn.textContent = "🧸"
     sleepBtn.textContent = "😴"
+    bgMusic.pause ()
 }
 
 setInterval(winOrLose, 1000)
