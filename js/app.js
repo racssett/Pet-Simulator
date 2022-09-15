@@ -30,6 +30,7 @@ const coffeeBtn = document.getElementById('coffee')
 const sleepBtn = document.getElementById('sleep')
 const friendBtn = document.getElementById('friend')
 const level2Loss = document.getElementById('evolution-2-crying')
+const level1Loss = document.getElementById('evolution-1-crying')
 let countdownEl = document.getElementById('countdown')
 let randomNumber = Math.floor(Math.random()*actionsArray.length)
 
@@ -59,6 +60,7 @@ function init () {
     finalEvolution.style.display = "none"
     levelCount.textContent = "Level: 1"
     level2Loss.style.display = "none"
+    level1Loss.style.display = "none"
     progBar.item(0).setAttribute('style', 'width: 0%')
     foodBtn.textContent = "🍯"
     coffeeBtn.textContent = "☕️"
@@ -79,6 +81,9 @@ function winOrLose () {
         if (level === 2) {
             level2Loss.style.display = "block"
             secondEvolution.style.display = "none"
+        } else if (level === 1) {
+            level1Loss.style.display = "block"
+            firstEvolution.style.display = "none"
         }
     }
 }
@@ -103,6 +108,7 @@ function start () {
     secondEvolution.style.display = "none"
     finalEvolution.style.display = "none"
     level2Loss.style.display = "none"
+    level1Loss.style.display = "none"
     progBar.item(0).setAttribute('style', 'width: 0%')
     startBtn.style.display = "none"
     restartBtn.style.display = "block"
