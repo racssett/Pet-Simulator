@@ -1,4 +1,6 @@
-## Pet Evolution
+# Pet Evolution
+
+## <a href="https://pet-evolution-simulator.netlify.app/">PLAY NOW</a>.
 
 ![Pet Evolution starting screen](./Assets/images/pet-evolution-start-screen.png)
 
